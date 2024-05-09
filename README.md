@@ -1,7 +1,8 @@
 # FlixApp - ReactJS
 
 ## Screenshot WebSiteImage
-> 
+> <img width="1000" alt="Captura de Tela 2024-05-09 às 17 51 23" src="https://github.com/herbertribeiro19/FlixNet/assets/84207944/3e3606a7-c7e2-4537-8eab-b8e684c33a01">
+
 
 ## Tecnologies
 - ReactJS
