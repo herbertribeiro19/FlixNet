@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay } from "swiper";
+import "swiper/css";
 import "./home.css";
 //https://api.themoviedb.org/3/movie/now_playing?api_key=02b5bfa195025d9b25c4abe3f4ef54e8&language=pt-BR
 
@@ -25,23 +28,32 @@ function Home() {
   return (
     <>
       <h1 className="titleBox">Últimos lançamentos</h1>
+
       <div className="containerGeral">
-        <div className="lista-filmes">
-          {filmes.map((filme) => {
-            return (
-              <article key={filme.id}>
-                <h2>{filme.title}</h2>
-                <img
-                  src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
-                  alt={filme.title}
-                />
-                <Link className="link" to={`/filme/${filme.id}`}>
-                  Acessar
-                </Link>
-              </article>
-            );
-          })}
-        </div>
+        <Swiper
+          // modules={[Autoplay]}
+          Autoplay={{ delay: 1000 }}
+          className="swiper-container"
+        >
+          <SwiperSlide className="swiper-item">
+            <div className="lista-filmes">
+              {filmes.map((filme) => {
+                return (
+                  <article key={filme.id}>
+                    <h2>{filme.title}</h2>
+                    <img
+                      src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
+                      alt={filme.title}
+                    />
+                    <Link className="link" to={`/filme/${filme.id}`}>
+                      Acessar
+                    </Link>
+                  </article>
+                );
+              })}
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </>
   );

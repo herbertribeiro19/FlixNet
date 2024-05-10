@@ -8,6 +8,7 @@
 }
 .containerGeral{
     margin: 20px;
+    max-width: 100%;
 }
 .lista-filmes{
     display: flex;
@@ -57,4 +58,12 @@
     box-shadow: 0px 2px 10px #333;
     font-weight: bold;
     color: #fff;
+}
+
+.swiper-container{
+    height: 80vh;
+}
+
+.slide-item{
+    margin: 10px;
 }
