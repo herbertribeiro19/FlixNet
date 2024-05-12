@@ -1,0 +1,27 @@
+.boxError{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.boxError h1{
+    color: white;
+    font-size: 80px;
+}
+
+.boxError h2{
+    color: white;
+    font-size: 50px;
+}
+
+.linkText{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: #E50914;
+    padding: 14px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
