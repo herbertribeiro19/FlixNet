@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./filme.css";
+import { toast } from "react-toastify";
 import api from "../../services/api";
 
 function Filme() {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const [filme, setFilme] = useState({});
   const [loading, setLoading] = useState(true);
   // const [desmontar, setDesmontar] = useState(false);
@@ -23,7 +26,8 @@ function Filme() {
           setLoading(false);
         })
         .catch(() => {
-          console.log("Filme not found");
+          navigate("/", { replace: true });
+          return;
         });
     }
     loadFilme();
@@ -32,7 +36,25 @@ function Filme() {
       console.log("Desmontado");
       // setDesmontar(true);
     };
-  }, []);
+  }, [navigate, id]);
+
+  function salvarFilme() {
+    const minhaLista = localStorage.getItem("@flixnet");
+    let filmesSalvos = JSON.parse(minhaLista) || [];
+
+    const hasFilme = filmesSalvos.some(
+      (filmesSalvo) => filmesSalvo.id === filme.id
+    );
+
+    if (hasFilme) {
+      toast.warn("Este filme já está na lista");
+      return;
+    }
+
+    filmesSalvos.push(filme);
+    localStorage.setItem("@flixnet", JSON.stringify(filmesSalvos));
+    toast.success("Filme salvo com sucesso");
+  }
 
   if (loading) {
     return (
@@ -54,8 +76,12 @@ function Filme() {
       <span>{filme.overview}</span>
 
       <div className="area-btn">
-        <button>Salvar</button>
-        <a target="_blank" href="#">
+        <button onClick={salvarFilme}>Salvar</button>
+        <a
+          rel="external"
+          target="blank"
+          href={`https://youtube.com/results?search_query=${filme.title} trailer`}
+        >
           <button>Assistir o Trailer</button>
         </a>
       </div>

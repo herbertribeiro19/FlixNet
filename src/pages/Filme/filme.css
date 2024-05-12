@@ -7,7 +7,13 @@
 .filme-info{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    background-color: #000000b7;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0px 220px 0px 220px;
+    padding: 20px 0px 20px 0px;
 }
 
 .filme-info h1{
@@ -27,6 +33,7 @@
     justify-content:baseline;
     color: #fff;
     font-weight: 200;
+    text-align: justify;
 }
 
 .filme-info strong{
@@ -39,24 +46,23 @@
 }
 
 .filme-info img{
-    width: 60%;
+    width: 70%;
+    height: max-content;
     border-radius: 10px;
     margin-top: 10px;
     margin: 14px 0px;
 }
 
 .area-btn{
-    margin: 10px 0px 10px 0px;
+    margin: 12px 0px 12px 0px;
     gap: 16px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    /* width: 16%; */
 }
 
 .area-btn button{
     background-color: #E50914;
-    padding: 14px;
+    padding: 12px;
     border-radius: 10px;
     cursor: pointer;
     color: #fff;
