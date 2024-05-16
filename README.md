@@ -6,6 +6,8 @@
 ><img width="900" alt="Captura de Tela 2024-05-12 às 02 49 15" src="https://github.com/herbertribeiro19/FlixNet/assets/84207944/64bb18f9-bee5-4277-bce9-f9a1f70cbce8">
 ><img width="900" alt="Captura de Tela 2024-05-12 às 02 49 31" src="https://github.com/herbertribeiro19/FlixNet/assets/84207944/8cb185af-1119-42a8-9c29-5f3691152e57">
 
+> Link to access:
+https://herbertribeiro19.github.io/FlixNet/
 
 ## Tecnologies
 - ReactJS
